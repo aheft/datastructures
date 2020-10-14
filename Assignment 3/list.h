@@ -27,7 +27,7 @@ int isEmpty(struct Performance *performance, struct Node **list_ptr);
 
 void freeList(struct Performance *performance, struct Node **list_ptr);
 
-void readItem(struct Performance *performance, struct Node *list_ptr, unsigned int index, void *dest, unsigned int width);
+void readItem(struct Performance *performance, struct Node **list_ptr, unsigned int index, void *dest, unsigned int width);
 
 void appendItem(struct Performance *performance, struct Node **list_ptr, void *src, unsigned int width);
 
