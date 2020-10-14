@@ -35,5 +35,3 @@ void insertItem(struct Performance *performance, struct Node **list_ptr, unsigne
 void prependItem(struct Performance *performance, struct Node **list_ptr, void *src, unsigned int width);
 
 void deleteItem(struct Performance *performance, struct Node **list_ptr, unsigned int index); 
-
-#endif
