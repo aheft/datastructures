@@ -1,4 +1,3 @@
-#ifndef LIST
 #define LIST
 
 struct Node{

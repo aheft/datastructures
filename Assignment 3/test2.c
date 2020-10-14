@@ -19,7 +19,7 @@
 void report( char *message, struct Performance *perf )
 {
   printf( "%s", message );
-  //printf( "  reads:   %5d\n", perf->reads );
+  printf( "  reads:   %5d\n", perf->reads );
   printf( "  writes:  %5d\n", perf->writes );
   printf( "  mallocs: %5d\n", perf->mallocs );
   printf( "  frees:   %5d\n", perf->frees );
