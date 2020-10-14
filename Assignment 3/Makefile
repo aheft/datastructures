@@ -13,10 +13,10 @@ test1.o: test1.c list.h
 	$(CC) $(CFLAGS) -c test1.c -o test1.o
 
 test2: test2.o list.o
-	$(CC) $(CFLAGS) -DLIST test2.o list.o -o test2
+	$(CC) $(CFLAGS) test2.o list.o -o test2
 
 test2.o: test2.c list.h
-	$(CC) $(CFLAGS) -DLIST -c test2.c -o test2.o
+	$(CC) $(CFLAGS) -c test2.c -o test2.o
 
 test3: test3.o list.o
 	$(CC) $(CFLAGS) test3.o list.o -o test3
