@@ -24,7 +24,7 @@ void push(struct Performance *performance, struct Node **list_ptr, void *src, un
 
 void readHead(struct Performance *performance, struct Node **list_ptr, void *dest, unsigned int width){
     if (*list_ptr==NULL){
-        fprintf(stderr, "List empty!\n");
+        fprintf(stderr, "List empty\n");
         exit(0);
     }
     memcpy(dest, (*list_ptr)->data, width);

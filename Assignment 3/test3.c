@@ -72,7 +72,7 @@ int main( int argc, char **argv )
   for (test=0;test<6;test++)
   {
     perf = newPerformance();
-    i=findItem( perf, &list, &cmp, test_names[test], STRLEN );
+    //i=findItem( perf, &list, &cmp, test_names[test], STRLEN );
     printf( "%s: i=%d\n", test_names[test], i );
 
     printf( "reads:   %5d\n", perf->reads );
