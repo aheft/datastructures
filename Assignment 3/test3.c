@@ -33,6 +33,10 @@ void readFile( struct Performance *performance, struct Node **list_ptr )
       appendItem( performance, list_ptr, name, STRLEN );
     }
   }
+  while (*list_ptr!=NULL){
+    printf("%s\n", (*list_ptr)->data);
+    *list_ptr=(*list_ptr)->next;
+  }
 
   fclose( fp );
 }
@@ -72,7 +76,8 @@ int main( int argc, char **argv )
   for (test=0;test<6;test++)
   {
     perf = newPerformance();
-    //i=findItem( perf, &list, &cmp, test_names[test], STRLEN );
+    i=findItem( perf, &list, &cmp, test_names[test], STRLEN );
+    printf("Leaving function %p\n", list);
     printf( "%s: i=%d\n", test_names[test], i );
 
     printf( "reads:   %5d\n", perf->reads );
