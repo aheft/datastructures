@@ -117,7 +117,6 @@ void deleteItem(struct Performance *performance, struct Node **list_ptr, unsigne
 }
 
 int findItem(struct Performance *performance, struct Node **list_ptr, int (*compar)(const void *, const void *), void *target, unsigned int width){
-    printf("Entering function %p\n", list_ptr);
     int counter=0;
     struct Node **temp=list_ptr;
     do{
@@ -133,6 +132,6 @@ int findItem(struct Performance *performance, struct Node **list_ptr, int (*comp
             temp=next(performance, temp);
         }
     }
-    while (temp!=NULL);
+    while (*temp!=NULL);
     return (-1);
 }
