@@ -115,3 +115,23 @@ void deleteItem(struct Performance *performance, struct Node **list_ptr, unsigne
         list_ptr=temp;
     }
 }
+
+int findItem(struct Performance *performance, struct Node **list_ptr, int (*compar)(const void *, const void *), void *target, unsigned int width){
+    int counter=0;
+    struct Node **temp=list_ptr;
+    do{
+        void *temp2=calloc(200, 1);
+        readHead(performance, temp, temp2, width);
+        if (compar(temp2, target)==0){
+            free (temp2);
+            return counter;
+        }
+        else{
+            free (temp2);
+            counter++;
+            temp=next(performance, temp);
+        }
+    }
+    while (temp!=NULL);
+    return (-1);
+}
