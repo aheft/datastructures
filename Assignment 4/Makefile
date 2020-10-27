@@ -10,7 +10,7 @@ ttest: ttest.o tree.o
 	$(CC) $(CFLAGS) ttest.o tree.o -o ttest
 
 ttest.o: ttest.c tree.h
-	$(CC) $(CFLAGS) -c ttest.c -o ttest.o
+	$(CC) $(CFLAGS) -c ttest.c
 
 clean:
 	rm *.o
