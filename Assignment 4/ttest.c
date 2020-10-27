@@ -93,43 +93,10 @@ int main( int argc, char **argv )
   printf( "Trees built\n" );
 
   strcpy( record.last_name, "Pollard" );
-  if ( searchItem( performance, &by_last_name, &comp_last_name,
-                   &record, sizeof(record) ) )
-  {
-    printf( "%s, %s.....%s\n", record.last_name, record.first_name, 
-                               record.phone_number );
-  }
-  else
-  {
-    printf( "Not found\n" );
-  }
-
 
   strcpy( record.first_name, "Frida" );
-  if ( searchItem( performance, &by_first_name, &comp_first_name,
-                   &record, sizeof(record) ) )
-  {
-    printf( "%s, %s.....%s\n", record.last_name, record.first_name, 
-                               record.phone_number );
-  }
-  else
-  {
-    printf( "Not found\n" );
-  }
-
 
   strcpy( record.last_name, "Kremer" );
-  if ( searchItem( performance, &by_last_name, &comp_last_name,
-                   &record, sizeof(record) ) )
-  {
-    printf( "%s, %s.....%s\n", record.last_name, record.first_name, 
-                               record.phone_number );
-  }
-  else
-  {
-    printf( "Not found\n" );
-  }
-
 
   freeTree( performance, &by_last_name );
   freeTree( performance, &by_first_name );
