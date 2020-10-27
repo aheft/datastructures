@@ -29,16 +29,16 @@ int comparNode(struct Performance *performance, struct Node **node_ptr, int (*co
 }
 
 struct Node **next(struct Performance *performance, struct Node **node_ptr, int direction){
-    performance->reads+=1;
     if (*node_ptr==NULL){
         fprintf(stderr, "Tree empty\n");
         exit(0);
     }
-    else if (direction<0){
-        return ((*node_ptr)->lt);
+    performance->reads+=1;
+    if (direction<0){
+        return (&(*node_ptr)->lt);
     }
-    else if (direction>=0){
-        return ((*node_ptr)->gte);
+    else (direction>=0){
+        return (&(*node_ptr)->gte);
     }
 }
 
@@ -73,14 +73,14 @@ int isEmpty(struct Performance *performance, struct Node **node_ptr){
 void addItem(struct Performance *performance, struct Node **node_ptr, int (*compar)(const void*, const void *), void *src, unsigned int width){
     struct Node *ptr= *node_ptr;
     while (ptr!=0){
-        ptr=next(performance, ptr, comparNode(performance, ptr, compar, src));
+        ptr=next(performance, &ptr, comparNode(performance, &ptr, compar, src));
     }
-    attachNode(performance, ptr, src, width);
+    attachNode(performance, &ptr, src, width);
 }
 
 void freeTree(struct Performance *performance, struct Node **node_ptr){
-    while (isEmpty(performance, list_ptr)==0){
-        detachNode(performance, list_ptr);
+    while (isEmpty(performance, node_ptr)==0){
+        detachNode(performance, node_ptr);
         next(performance, node_ptr, 1);
     }
 }
