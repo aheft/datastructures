@@ -73,7 +73,7 @@ int isEmpty(struct Performance *performance, struct Node **node_ptr){
 void addItem(struct Performance *performance, struct Node **node_ptr, int (*compar)(const void*, const void *), void *src, unsigned int width){
     struct Node *ptr= *node_ptr;
     while (ptr!=0){
-        ptr=next(performance, &ptr, comparNode(performance, &ptr, compar, src));
+        ptr=*next(performance, &ptr, comparNode(performance, &ptr, compar, src));
     }
     attachNode(performance, &ptr, src, width);
 }
