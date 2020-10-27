@@ -37,7 +37,7 @@ struct Node **next(struct Performance *performance, struct Node **node_ptr, int 
     if (direction<0){
         return (&(*node_ptr)->lt);
     }
-    else (direction>=0){
+    else{
         return (&(*node_ptr)->gte);
     }
 }
