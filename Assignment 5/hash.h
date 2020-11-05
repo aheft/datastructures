@@ -16,6 +16,8 @@ struct Performance{
     unsigned int frees;
 };
 
+struct Performance *newPerformance();
+
 struct HashTable *createTable(struct Performance *performance, unsigned int capacitty, int (*hash)(void *, int), int (*compar)(const void *, const void *));
 
 void addElement(struct Performance *performance, struct HashTable *table, void *src);
