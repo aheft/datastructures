@@ -24,10 +24,10 @@ struct HashTable *createTable(struct Performance *performance, unsigned int capa
     newTable->compar=compar;
     newTable->nel=0;
     newTable->data=malloc(sizeof(void*)*capacity);
-    if(newTable->data == NULL){
+    /*if(newTable->data == NULL){
         fprintf(stderr, "Malloc failed.");
         exit(0);
-    }
+    }*/
     for (i=0; i<capacity; i++){
         newTable->data[i]=NULL;
     }
