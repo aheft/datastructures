@@ -22,7 +22,7 @@ struct HashTable *createTable(struct Performance *performance, unsigned int capa
     newTable->hash=hash;
     newTable->compar=compar;
     newTable->nel=0;
-    newTable->data=malloc(capacity*4);
+    newTable->data=malloc(sizeof(void*)*capacity);
     if(newTable->data == NULL){
         fprintf(stderr, "Malloc failed.");
         exit(0);
