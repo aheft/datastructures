@@ -45,7 +45,7 @@ void addElement(struct Performance *performance, struct HashTable *table, void *
     else{
         int index=table->hash(src, table->capacity);
         int i;
-        for (i = index; table->data[index]!=NULL; i++){
+        for (i = index; table->data[i]!=NULL; i++){
             if (i==table->capacity){
                 i=0;
             }
