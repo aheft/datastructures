@@ -42,13 +42,14 @@ void addElement(struct Performance *performance, struct HashTable *table, void *
     }
     else{
         int index=table->hash(src, table->capacity);
-        for (index; table->data[index]!=NULL; index++){
-            if (index==table->capacity){
-                index=0;
+        int i;
+        for (i = index; table->data[index]!=NULL; i++){
+            if (i==table->capacity){
+                i=0;
             }
             performance->reads++;
         }
-        table->data[index]=src;
+        table->data[i]=src;
         table->nel++;
         performance->writes++;
     }
@@ -57,16 +58,17 @@ void addElement(struct Performance *performance, struct HashTable *table, void *
 int getIdx(struct Performance *performance, struct HashTable *table, void *src){
     int index=table->hash(src, table->capacity);
     int oindex=index;
-    for (index; table->compar(src, table->data[index])!=0; index++){
-        if (index==table->capacity){
-            index=0;
+    int i;
+    for (i=index; table->compar(src, table->data[index])!=0; i++){
+        if (i==table->capacity){
+            i=0;
         }
-        if (index==oindex-1){
+        if (i==oindex-1){
             return (-1);
         }
         performance->reads++;
     }
-    return(index);
+    return(i);
 }
 
 void freeTable(struct Performance *performance, struct HashTable *table){
