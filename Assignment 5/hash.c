@@ -13,7 +13,7 @@ struct Performance *newPerformance(){
 }
 
 struct HashTable *createTable(struct Performance *performance, unsigned int capacity, int (*hash)(void *, int), int (*compar)(const void *, const void *)){
-    struct HashTable *newTable=malloc(sizeof(struct HashTable))
+    struct HashTable *newTable=malloc(sizeof(struct HashTable));
     if(newTable == NULL){
         fprintf(stderr, "Malloc failed.");
         exit(0);
@@ -58,11 +58,11 @@ int getIdx(struct Performance *performance, struct HashTable *table, void *src){
     int index=table->hash(src, table->capacity);
     int oindex=index;
     for (index; table->compar(src, table->data[index])!=0; index++){
-        if (index=table->capacity){
+        if (index==table->capacity){
             index=0;
         }
         if (index==oindex-1){
-            return (-1)
+            return (-1);
         }
         performance->reads++;
     }
@@ -80,7 +80,7 @@ void *getElement(struct Performance *performance, struct HashTable *table, void 
         return NULL;
     }
     else{
-        return (table->data[getIdx(performance, table, src)])
+        return (table->data[getIdx(performance, table, src)]);
     }
 }
 
