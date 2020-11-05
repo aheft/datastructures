@@ -85,7 +85,7 @@ void *getElement(struct Performance *performance, struct HashTable *table, void 
 }
 
 void removeElement(struct Performance *performance, struct HashTable *table, void *target){
-    table->data[getIdx(performance, table, src)]=NULL;
+    table->data[getIdx(performance, target, table)]=NULL;
     performance->writes++;
     table->nel-=1;
 }
