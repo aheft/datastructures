@@ -150,11 +150,12 @@ int main( int argc, char **argv )
                               &hash_last_name, comp_last_name );
   by_first_name = createTable( performance, CAPACITY, 
                               &hash_first_name, comp_first_name );
-  printf("Table created\n");
   for (i=0;i<TOTAL_RECORDS;i++)
   {
+    printf("tryna add");
     addElement( performance, by_last_name, &(record[i]) );
     addElement( performance, by_first_name, &(record[i]) );
+    printf("adding worked");
   }
   printf( "Hashes built\n" );
   printf( "reads:   %5d\n", performance->reads );
