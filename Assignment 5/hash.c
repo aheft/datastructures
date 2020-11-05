@@ -14,6 +14,7 @@ struct Performance *newPerformance(){
 
 struct HashTable *createTable(struct Performance *performance, unsigned int capacity, int (*hash)(void *, int), int (*compar)(const void *, const void *)){
     struct HashTable *newTable=malloc(sizeof(struct HashTable));
+    int i;
     if(newTable == NULL){
         fprintf(stderr, "Malloc failed.");
         exit(0);
@@ -27,7 +28,7 @@ struct HashTable *createTable(struct Performance *performance, unsigned int capa
         fprintf(stderr, "Malloc failed.");
         exit(0);
     }
-    for (int i=0; i<capacity; i++){
+    for (i=0; i<capacity; i++){
         newTable->data[i]=NULL;
     }
     performance->reads+=capacity;
