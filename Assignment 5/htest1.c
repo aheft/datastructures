@@ -150,6 +150,7 @@ int main( int argc, char **argv )
                               &hash_last_name, comp_last_name );
   by_first_name = createTable( performance, CAPACITY, 
                               &hash_first_name, comp_first_name );
+  printf("Table created\n");
   for (i=0;i<TOTAL_RECORDS;i++)
   {
     addElement( performance, by_last_name, &(record[i]) );
