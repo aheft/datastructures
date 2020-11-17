@@ -55,4 +55,5 @@ int main(int argc, char*argv[]){
         write_index(khsFile, keyindex, keyindex);
         write_index(vhsFile, valindex, valindex);
     }
+    return 0;
 }
