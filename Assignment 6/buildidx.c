@@ -57,7 +57,8 @@ int main(int argc, char*argv[]){
         while (k!=-1){
             printf("%d\n", k);
             keyindex=hashfn(key, getflen(khsFile));
-            read_index(khsFile, keyindex, &k);
+            fseek(khsFile, keyindex*sizeof(int), SEEK_SET);
+            fread(&k, sizeof(int), 1, khsFile);
         }
         write_index(khsFile, keyindex, keyindex);
         write_index(vhsFile, valindex, valindex);
