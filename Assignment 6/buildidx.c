@@ -54,9 +54,8 @@ int main(int argc, char*argv[]){
         int valindex=hashfn(val, getflen(vhsFile));
         int k=0;
         int v=0;
-        printf("%d\n", k);
         while (k!=-1){
-            printf("looping\n");
+            printf("%d\n", k);
             keyindex=hashfn(key, getflen(khsFile));
             read_index(khsFile, keyindex, &k);
         }
