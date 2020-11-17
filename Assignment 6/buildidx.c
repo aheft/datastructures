@@ -52,8 +52,12 @@ int main(int argc, char*argv[]){
         write_empty(vhsFile, atol(argv[2]));
         int keyindex=hashfn(key, getflen(khsFile));
         int valindex=hashfn(val, getflen(vhsFile));
-        printf("%d\n", keyindex);
-        printf("%d\n", valindex);
+        int k=0;
+        int v=0;
+        while (read_index(khsFile, keyindex, &k)<1){
+            printf("looping\n");
+            keyindex=hashfn(key, getflen(khsFile));
+        }
         write_index(khsFile, keyindex, keyindex);
         write_index(vhsFile, valindex, valindex);
         fclose(khsFile);
@@ -62,12 +66,8 @@ int main(int argc, char*argv[]){
         vhsFile=fopen(vhsfile, "rb");
         fseek(khsFile, keyindex*sizeof(int), 0);
         fseek(vhsFile, valindex*sizeof(int), 0);
-        int k=0;
-        int v=0;
         fread(&k, sizeof(int), 1, khsFile);
         fread(&v, sizeof(int), 1, vhsFile);
-        printf("%d\n", k);
-        printf("%d\n", v);
         fclose(khsFile);
         fclose(vhsFile);
         free(khsfile);
