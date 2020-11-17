@@ -31,7 +31,7 @@ int hashfn( char *s, int max )
   for (c=s;(*c);c++)
   {
     number += char2int(*c) * column;
-    column *= 38;
+    column *= 11;
   }
 
   // convert number to a base max number and add up the column values
