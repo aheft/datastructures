@@ -54,12 +54,14 @@ int main(int argc, char*argv[]){
         int valindex=hashfn(val, getflen(vhsFile));
         int k=0;
         int v=0;
+        read_index(khsFile, keyindex, &k);
+        printf("%d\n", k);
         while (read_index(khsFile, keyindex, &k)==-1){
             printf("looping\n");
             keyindex=hashfn(key, getflen(khsFile));
+            write_index(khsFile, keyindex, keyindex);
+            write_index(vhsFile, valindex, valindex);
         }
-        write_index(khsFile, keyindex, keyindex);
-        write_index(vhsFile, valindex, valindex);
         fclose(khsFile);
         fclose(vhsFile);
         khsFile=fopen(khsfile, "rb");
