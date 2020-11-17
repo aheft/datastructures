@@ -56,7 +56,7 @@ int main(int argc, char*argv[]){
         int v=0;
         printf("%d\n", k);
         keyindex=hashfn(key, getflen(khsFile));
-        fseek(khsFile, keyindex*sizeof(int), SEEK_SET);
+        fseek(khsFile, keyindex, SEEK_SET);
         fread(&k, sizeof(int), 0, khsFile);
         printf("After read: %d\n", k);
         /*while (k!=-1){
