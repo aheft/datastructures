@@ -60,8 +60,8 @@ int main(int argc, char*argv[]){
         fclose(vhsFile);
         khsFile=fopen(khsfile, "rb");
         vhsFile=fopen(vhsfile, "rb");
-        fseek(khsFile, keyindex-sizeof(int), 0);
-        fseek(vhsFile, valindex-sizeof(int), 0);
+        fseek(khsFile, keyindex*sizeof(int), 0);
+        fseek(vhsFile, valindex*sizeof(int), 0);
         int k=0;
         int v=0;
         fread(&k, sizeof(int), 1, khsFile);
