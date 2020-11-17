@@ -1,8 +1,8 @@
 $(CC)=gcc -Wall -g -pedantic -std=c99
 
 all: buildidx key2val val2key
-	$(CC) buildidx.o util.o hashfn.o -o buildidx
-	#$(CC) key2val.o util.o hashfn.o -o key2val;
+	$(CC) buildidx.o util.o hashfn.o -o buildidx;
+	$(CC) key2val.o util.o hashfn.o -o key2val
 	#$(CC) val2key.o util.o hashfn.o -o val2key;
 
 util: util.c
