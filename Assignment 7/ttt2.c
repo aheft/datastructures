@@ -43,8 +43,9 @@ void join_graph(Board board){
             htable[hash].move[i]=-1;
         }
         else{
-            char*newboard=calloc(strlen(board)+1, 1);
-            char currentturn=turn(board)
+            char newboard[30]="";
+            strcpy(newboard, "");
+            char currentturn=turn(board);
             strcpy(newboard, board);
             newboard[pos2idx[i]]=currentturn;
             int newhash=board_hash(newboard);
