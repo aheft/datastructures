@@ -57,3 +57,11 @@ void join_graph(Board board){
         }
     }
 }
+
+void compute_score(){
+    return;
+}
+
+int best_move(int board){
+    return 0;
+}
