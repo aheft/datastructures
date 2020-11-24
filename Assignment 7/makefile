@@ -1,6 +1,6 @@
 $(CC)=gcc -Wall -g -pedantic -std=c99
 
-all: alphatoe count_nodes ttt1 ttt2
+all: alphatoe count_nodes show_node ttt1 ttt2
 	$(CC) alphatoe.o ttt1.o ttt2.o -o alphatoe;
 	$(CC) count_nodes.o ttt1.o ttt2.o -o count_nodes;
 	$(CC) show_node.o ttt1.o ttt2.o -o show_node
