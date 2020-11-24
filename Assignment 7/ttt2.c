@@ -2,6 +2,7 @@
 #include <ctype.h>
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 void init_boards(){
     for (int i=0; i<HSIZE; i++){
