@@ -46,4 +46,7 @@ void join_graph( Board board );
 void compute_score();
 int best_move( int board );
 void print_node( struct BoardNode board_node );
+int calcrow(Board board, char c);
+int calccol(Board board, char c);
+int calcdiag(Board board, char c);
 #endif

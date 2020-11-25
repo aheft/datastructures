@@ -66,3 +66,93 @@ void compute_score(){
 int best_move(int board){
     return 0;
 }
+
+int calcrow(Board board, char c){
+    int counter=0;
+    for (int i=0; i<3; i++){
+        if (board[pos2idx[i]]==c){
+            counter++;
+        }
+    }
+    if (counter==3){
+        return 1;
+    }
+    counter=0;
+    for (int i=3; i<6; i++){
+        if (board[pos2idx[i]]==c){
+            counter++;
+        }
+    }
+    if (counter==3){
+        return 1;
+    }
+    counter=0;
+    for (int i=6; i<9; i++){
+        if (board[pos2idx[i]]==c){
+            counter++;
+        }
+    }
+    if (counter==3){
+        return 1;
+    }
+    counter=0;
+    return 0;
+}
+
+int calccol(Board board, char c){
+    int counter=0;
+    for (int i=0; i<9; i+=3){
+        if (board[pos2idx[i]]==c){
+            counter++;
+        }
+    }
+    if (counter==3){
+        return 1;
+    }
+    counter=0;
+    for (int i=1; i<9; i+=3){
+        if (board[pos2idx[i]]==c){
+            counter++;
+        }
+    }
+    if (counter==3){
+        return 1;
+    }
+    counter=0;
+    for (int i=2; i<9; i+=3){
+        if (board[pos2idx[i]]==c){
+            counter++;
+        }
+    }
+    if (counter==3){
+        return 1;
+    }
+    counter=0;
+    return 0;
+}
+
+int calcdiag(Board board, char c){
+    int counter=0;
+    for (int i=0; i<9; i+=4){
+        if (board[pos2idx[i]]==c){
+            counter++;
+        }
+    }
+    if (counter==3){
+        return 1;
+    }
+    counter=0;
+    for (int i=2; i<7; i+=2){
+        if (board[pos2idx[i]]==c){
+            counter++;
+        }
+    }
+    if (counter==3){
+        return 1;
+    }
+    counter=0;
+}
+
+void compute_score(){
+    if ()
+}

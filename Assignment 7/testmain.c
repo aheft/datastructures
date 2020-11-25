@@ -8,6 +8,6 @@
 int main(){
     init_boards();
     init_board(START_BOARD);
-    join_graph(START_BOARD);
+    printf("%d\n", calccol(START_BOARD, 'X'));
     return 0;
 }
