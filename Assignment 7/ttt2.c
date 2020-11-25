@@ -153,6 +153,6 @@ int calcdiag(Board board, char c){
     counter=0;
 }
 
-void compute_score(){
-    if ()
-}
+//void compute_score(){
+  //  if ()
+//}
