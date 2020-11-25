@@ -49,4 +49,9 @@ void print_node( struct BoardNode board_node );
 int calcrow(Board board, char c);
 int calccol(Board board, char c);
 int calcdiag(Board board, char c);
+int boardfull(Board board);
+void setwinner(Board board);
+void setmoves(Board board);
+void setdepth(Board board);
+void setturn(Board board);
 #endif

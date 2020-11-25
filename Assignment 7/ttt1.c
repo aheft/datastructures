@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 // printable string that displays the initial board
-Board START_BOARD = "X|1|2\n-+-+-\n3|X|5\n-+-+-\n6|7|X\n";
+Board START_BOARD = "0|1|2\n-+-+-\n3|4|5\n-+-+-\n6|7|8\n";
 
 // array that maps the playable positions to their indices in the board string
 int pos2idx[9] = { 0, 2, 4, 12, 14, 16, 24, 26, 28 };

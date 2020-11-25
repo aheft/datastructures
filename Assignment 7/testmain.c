@@ -7,7 +7,14 @@
 
 int main(){
     init_boards();
-    init_board(START_BOARD);
-    printf("%d\n", calcdiag(START_BOARD, 'X'));
+    join_graph(START_BOARD);
+    print_node(htable[board_hash(START_BOARD)]);
+    START_BOARD[pos2idx[0]]='X';
+    print_node(htable[board_hash(START_BOARD)]);
+    START_BOARD[pos2idx[8]]='O';
+    START_BOARD[pos2idx[1]]='X';
+    START_BOARD[pos2idx[7]]='O';
+    START_BOARD[pos2idx[2]]='X';
+    print_node(htable[board_hash(START_BOARD)]);
     return 0;
 }
