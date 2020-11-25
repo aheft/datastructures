@@ -83,8 +83,10 @@ void join_graph(Board board){
             newboard[pos2idx[i]]=currentturn;
             int newhash=board_hash(newboard);
             htable[newhash].move[i]=newhash;
+            printf("Init value %d\n", htable[newhash].init);
             if (htable[newhash].init=='0'){
                 init_board(newboard);
+                print_node(htable[board_hash(newboard)]);
                 join_graph(newboard);
             }
         }
