@@ -58,7 +58,7 @@ int board_hash( char board[31] )
 void print_node( struct BoardNode board_node )
 {
   printf( "**************************************************************\n" );
-  printf( "init=%d\n", board_node.init );
+  printf( "init=%c\n", board_node.init );
   if (board_node.init)
   {
     printf("Board\n %s\n", board_node.board);
